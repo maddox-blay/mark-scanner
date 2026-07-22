@@ -32,7 +32,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
-      <body className="box-border px-12 min-h-full flex flex-col">
+      <body className="box-border min-h-full flex flex-col">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
