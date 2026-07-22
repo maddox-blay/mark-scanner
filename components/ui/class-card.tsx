@@ -11,7 +11,7 @@ import Link from "next/link"
 
 function ClassCard() {
     return (
-        <Link className="w-full max-w-xs" href={"/classroom"}>
+        <Link className="w-full md:max-w-xs" href={"/classroom"}>
             <Card size="sm">
                 <CardHeader>
                     <CardTitle className="font-bold">Ce-300</CardTitle>
