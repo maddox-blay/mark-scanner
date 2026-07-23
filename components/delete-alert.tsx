@@ -31,7 +31,7 @@ export default function DeleteAlert({ name, id }: { name: string, id: string }) 
             <AlertDialogTrigger render={<Button variant="destructive" size="icon" onClick={(e) => { e.preventDefault(); e.stopPropagation() }} />}>
                 <Trash2Icon />
             </AlertDialogTrigger>
-            <AlertDialogContent size="sm">
+            <AlertDialogContent size="sm" onClick={(e) => { e.preventDefault(); e.stopPropagation() }}>
                 <AlertDialogHeader>
                     <AlertDialogMedia className="bg-destructive/10 text-destructive dark:bg-destructive/20 dark:text-destructive">
                         <Trash2Icon />
@@ -43,22 +43,10 @@ export default function DeleteAlert({ name, id }: { name: string, id: string }) 
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                    <AlertDialogCancel
-                        onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation()
-                        }}
-                    >
+                    <AlertDialogCancel>
                         Cancel
                     </AlertDialogCancel>
-                    <AlertDialogAction
-                        variant="destructive"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation()
-                            handleDelete()
-                        }}
-                    >
+                    <AlertDialogAction variant="destructive">
                         Yes, delete class
                     </AlertDialogAction>
                 </AlertDialogFooter>
