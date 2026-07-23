@@ -39,7 +39,7 @@ export default function DeleteAlert({ name, id }: { name: string, id: string }) 
                     <AlertDialogTitle>Are you sure you want to delete {name}?</AlertDialogTitle>
                     <AlertDialogDescription>
                         This action cannot be undone. This will permanently delete your classroom and all related files
-                        from our servers.n
+                        from our servers.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>

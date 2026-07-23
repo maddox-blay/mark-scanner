@@ -7,7 +7,6 @@ import {
     CardTitle,
     CardFooter
 } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import DeleteAlert from "../delete-alert"
 import { useRouter } from "next/navigation"
 
