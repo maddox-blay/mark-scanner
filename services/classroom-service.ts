@@ -47,3 +47,10 @@ export async function getClassByslugs(slug: string, userId:string){
     return classroom
 }
 
+export async function deleteClassroom(id: string){
+    await prisma.classroom.delete({
+        where:{
+            id
+        }
+    })
+}
