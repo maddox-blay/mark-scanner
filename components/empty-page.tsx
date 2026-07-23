@@ -1,9 +1,6 @@
 import { Book } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { ClassDialog } from "./classroom-dialog"
 import {
     Empty,
-    EmptyContent,
     EmptyDescription,
     EmptyHeader,
     EmptyMedia,

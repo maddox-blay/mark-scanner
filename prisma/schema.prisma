@@ -32,12 +32,14 @@ model User {
 model Classroom {
   id        String   @id @default(cuid())
   name      String
+  slug      String   @unique
   userId    String
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@unique([userId, name])
+  @@unique([userId, slug])
 }
 
 model Account {

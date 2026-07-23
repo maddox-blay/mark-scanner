@@ -2,9 +2,11 @@
 import { createClassroom } from "@/services/classroom-service";
 import { ClassroomSchema, ClassroomValues } from "@/schemas/classroom-schema";
 import { auth } from "@/auth";
+import { z } from "zod";
 
 export default async function createClass(formData: ClassroomValues) {
     const parsedData = ClassroomSchema.safeParse(formData);
+    const slugTransform = z.string().slugify();
     const session = await auth();
     if (!session?.user?.id) {
         return { success: false, error: "Not authenticated" };
@@ -21,8 +23,8 @@ export default async function createClass(formData: ClassroomValues) {
 
     const { name, } = parsedData.data;
 
-
-    const result = await createClassroom(name, userId)
+    const slug = slugTransform.parse(name)
+    const result = await createClassroom(name, userId, slug)
 
     if (!result.success) {
         return {

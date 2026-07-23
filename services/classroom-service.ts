@@ -1,7 +1,7 @@
 "use server"
 import prisma from "@/lib/prisma"
 
-export async function createClassroom(name: string, userId: string) {
+export async function createClassroom(name: string, userId: string, slug: string) {
     const existing = await prisma.classroom.findUnique({
         where: { 
             userId_name: { 
@@ -19,7 +19,8 @@ export async function createClassroom(name: string, userId: string) {
     const classroom = await prisma.classroom.create({ 
         data: { 
             userId, 
-            name 
+            name,
+            slug 
         } 
     })
     return { success: true as const, classroom }
@@ -33,3 +34,16 @@ export async function getUserClassrooms(userId: string){
     })
     return classrooms
 }
+
+export async function getClassByslugs(slug: string, userId:string){
+    const classroom = await prisma.classroom.findUnique({
+        where:{
+            userId_slug:{
+                userId,
+                slug
+            }
+        }
+    })
+    return classroom
+}
+

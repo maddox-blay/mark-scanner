@@ -9,9 +9,9 @@ import {
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 
-function ClassCard({ name }: { name: string }) {
+function ClassCard({ name, slug = "empty" }: { name: string, slug: string }) {
     return (
-        <Link className="w-full md:max-w-xs" href={"/classroom"}>
+        <Link className="w-full md:max-w-xs" href={`/dashboard/@me/${slug}`}>
             <Card size="sm">
                 <CardHeader>
                     <CardTitle className="font-bold">{name}</CardTitle>
