@@ -5,7 +5,8 @@ export const signUpSchema = z.object({
         .string()
         .min(1, "enter name"),
     email: z
-        .email("invalid email"),
+        .email("invalid email")
+        .toLowerCase(),
     password: z
         .string()
         .min(8, "password must be at least 8 characters long"),
