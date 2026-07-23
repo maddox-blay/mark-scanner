@@ -25,7 +25,7 @@ export default async function Page() {
                     <ClassCard />
                 </div>
             </ScrollArea>
-            <Button className="fixed bottom-4 left-4 right-4 w-auto h-12.5 md:hidden"> <PlusIcon />create class</Button>
+            <Button className="fixed bottom-8 left-4 right-4 w-auto h-12.5 md:hidden"> <PlusIcon />create class</Button>
         </div >
     )
 }
