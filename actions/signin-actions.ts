@@ -7,7 +7,7 @@ export async function SignInAction(email: string, password: string) {
         await signIn("credentials", {
             email,
             password,
-            redirectTo: "/"
+            redirectTo: "/dashboard"
         });
         return { success: true as const };
     } catch (error) {
