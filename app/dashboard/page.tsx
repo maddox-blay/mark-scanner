@@ -29,7 +29,7 @@ export default async function Page() {
                         <EmptyPage />
                     ) : (
                         classes.map((classroom) => (
-                            <ClassCard key={classroom.id} name={classroom.name} slug={classroom.slug} />
+                            <ClassCard key={classroom.id} name={classroom.name} slug={classroom.slug} id={classroom.id} />
                         ))
                     )}
                 </div>
