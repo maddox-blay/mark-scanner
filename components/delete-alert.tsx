@@ -46,7 +46,7 @@ export default function DeleteAlert({ name, id }: { name: string, id: string }) 
                     <AlertDialogCancel>
                         Cancel
                     </AlertDialogCancel>
-                    <AlertDialogAction variant="destructive">
+                    <AlertDialogAction onClick={handleDelete} variant="destructive">
                         Yes, delete class
                     </AlertDialogAction>
                 </AlertDialogFooter>
